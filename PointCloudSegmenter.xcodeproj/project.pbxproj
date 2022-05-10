@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F6CDA9726CFAF5B0001D1E3 /* CpuParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CDA9626CFAF5B0001D1E3 /* CpuParticle.swift */; };
+		0F852DA326B80435004B4DCF /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F852DA226B80435004B4DCF /* FileWriter.swift */; };
+		0FA9255E26B926AE00012C25 /* XError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9255D26B926AE00012C25 /* XError.swift */; };
+		0FA9256426BB5F6000012C25 /* SaveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9256326BB5F6000012C25 /* SaveController.swift */; };
+		0FFF3FEE26C0A94400BBD761 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFF3FED26C0A94400BBD761 /* ResultController.swift */; };
+		590F87C727E8495B006E1098 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590F87C627E8495B006E1098 /* MainController.swift */; };
+		590F87C927E85CB8006E1098 /* VisualizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590F87C827E85CB8006E1098 /* VisualizeController.swift */; };
+		590F87D027F4401F006E1098 /* points2volume.py in Resources */ = {isa = PBXBuildFile; fileRef = 590F87CF27F4401F006E1098 /* points2volume.py */; };
+		592424D3282019E7004C4E5D /* SegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592424D2282019E7004C4E5D /* SegmentController.swift */; };
+		592424D52827CCB9004C4E5D /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592424D42827CCB9004C4E5D /* FileReader.swift */; };
+		5964041727F82A9F004D3EA7 /* dgcnnmin.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 590F880827F82138006E1098 /* dgcnnmin.mlmodel */; };
+		5964041827F82AB3004D3EA7 /* room2blocks.py in Resources */ = {isa = PBXBuildFile; fileRef = 590F880227F8201F006E1098 /* room2blocks.py */; };
+		5964041A27F82AC6004D3EA7 /* PythonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590F880427F82086006E1098 /* PythonController.swift */; };
+		5964043627F83072004D3EA7 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5964043527F83072004D3EA7 /* PythonKit */; };
+		5964043927F83082004D3EA7 /* NumPy-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 5964043827F83082004D3EA7 /* NumPy-iOS */; };
+		5964043C27F830BA004D3EA7 /* Open3D-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 5964043B27F830BA004D3EA7 /* Open3D-iOS */; };
+		C11B2C8A0EC43C916ADACB16 /* Pods_PointCloudSegmenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2735194848797D2B624812AC /* Pods_PointCloudSegmenter.framework */; };
+		E73DD13124636FEF00D77039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DD13024636FEF00D77039 /* AppDelegate.swift */; };
+		E73DD13324636FEF00D77039 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = E73DD13224636FEF00D77039 /* Shaders.metal */; };
+		E73DD13624636FEF00D77039 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DD13524636FEF00D77039 /* Renderer.swift */; };
+		E73DD13824636FEF00D77039 /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DD13724636FEF00D77039 /* ScanController.swift */; };
+		E73DD13B24636FEF00D77039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73DD13924636FEF00D77039 /* Main.storyboard */; };
+		E73DD13D24636FF100D77039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73DD13C24636FF100D77039 /* Assets.xcassets */; };
+		E73DD14024636FF100D77039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73DD13E24636FF100D77039 /* LaunchScreen.storyboard */; };
+		E7B7223B24807ACA002E43E8 /* MetalBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B7223A24807ACA002E43E8 /* MetalBuffer.swift */; };
+		E7B7223D24809D1E002E43E8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B7223C24809D1E002E43E8 /* Helpers.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F6CDA9626CFAF5B0001D1E3 /* CpuParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuParticle.swift; sourceTree = "<group>"; };
+		0F852DA226B80435004B4DCF /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
+		0FA9255D26B926AE00012C25 /* XError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XError.swift; sourceTree = "<group>"; };
+		0FA9256326BB5F6000012C25 /* SaveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveController.swift; sourceTree = "<group>"; };
+		0FFF3FED26C0A94400BBD761 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		2735194848797D2B624812AC /* Pods_PointCloudSegmenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PointCloudSegmenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		590F87C627E8495B006E1098 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		590F87C827E85CB8006E1098 /* VisualizeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeController.swift; sourceTree = "<group>"; };
+		590F87CF27F4401F006E1098 /* points2volume.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = points2volume.py; sourceTree = "<group>"; };
+		590F880227F8201F006E1098 /* room2blocks.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = room2blocks.py; path = "Python Scripts/room2blocks.py"; sourceTree = "<group>"; };
+		590F880427F82086006E1098 /* PythonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonController.swift; sourceTree = "<group>"; };
+		590F880827F82138006E1098 /* dgcnnmin.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = dgcnnmin.mlmodel; path = Resources/Model/dgcnnmin.mlmodel; sourceTree = "<group>"; };
+		590F880927F8236C006E1098 /* PointCloudSegmenterRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PointCloudSegmenterRelease.entitlements; sourceTree = "<group>"; };
+		592424D2282019E7004C4E5D /* SegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
+		592424D42827CCB9004C4E5D /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
+		5964041627F829C1004D3EA7 /* PointCloudSegmenter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PointCloudSegmenter.entitlements; sourceTree = "<group>"; };
+		5964041E27F82C64004D3EA7 /* PointCloudSegmenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PointCloudSegmenter-Bridging-Header.h"; sourceTree = "<group>"; };
+		948146554F46E56B015690CC /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		B57D60B9736905755DECF7CE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C1BFBEA28CF299887A91A5F9 /* Pods-PointCloudSegmenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointCloudSegmenter.release.xcconfig"; path = "Target Support Files/Pods-PointCloudSegmenter/Pods-PointCloudSegmenter.release.xcconfig"; sourceTree = "<group>"; };
+		E126D2152EAEF387F418CE57 /* Pods-PointCloudSegmenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointCloudSegmenter.debug.xcconfig"; path = "Target Support Files/Pods-PointCloudSegmenter/Pods-PointCloudSegmenter.debug.xcconfig"; sourceTree = "<group>"; };
+		E73DD12D24636FEF00D77039 /* Point Cloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Point Cloud.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E73DD13024636FEF00D77039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E73DD13224636FEF00D77039 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		E73DD13424636FEF00D77039 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		E73DD13524636FEF00D77039 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		E73DD13724636FEF00D77039 /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
+		E73DD13A24636FEF00D77039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E73DD13C24636FF100D77039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E73DD13F24636FF100D77039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E73DD14124636FF100D77039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7B7223A24807ACA002E43E8 /* MetalBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalBuffer.swift; sourceTree = "<group>"; };
+		E7B7223C24809D1E002E43E8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E7E2ED6F1473F1FD1E9543FA /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E73DD12A24636FEF00D77039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5964043927F83082004D3EA7 /* NumPy-iOS in Frameworks */,
+				5964043627F83072004D3EA7 /* PythonKit in Frameworks */,
+				5964043C27F830BA004D3EA7 /* Open3D-iOS in Frameworks */,
+				C11B2C8A0EC43C916ADACB16 /* Pods_PointCloudSegmenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3655B6B37F30E2B4F9E4D8BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E126D2152EAEF387F418CE57 /* Pods-PointCloudSegmenter.debug.xcconfig */,
+				C1BFBEA28CF299887A91A5F9 /* Pods-PointCloudSegmenter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A6415A999BE1C768F18B2649 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				948146554F46E56B015690CC /* SampleCode.xcconfig */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		BF2DD93DB9836723DA6BED14 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2ED6F1473F1FD1E9543FA /* LICENSE.txt */,
+			);
+			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		E096FCED5CFDD9DDB11813FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2735194848797D2B624812AC /* Pods_PointCloudSegmenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E73DD12424636FEF00D77039 = {
+			isa = PBXGroup;
+			children = (
+				B57D60B9736905755DECF7CE /* README.md */,
+				E73DD12F24636FEF00D77039 /* PointCloudSegmenter */,
+				E73DD12E24636FEF00D77039 /* Products */,
+				A6415A999BE1C768F18B2649 /* Configuration */,
+				BF2DD93DB9836723DA6BED14 /* LICENSE */,
+				3655B6B37F30E2B4F9E4D8BE /* Pods */,
+				E096FCED5CFDD9DDB11813FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E73DD12E24636FEF00D77039 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E73DD12D24636FEF00D77039 /* Point Cloud.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E73DD12F24636FEF00D77039 /* PointCloudSegmenter */ = {
+			isa = PBXGroup;
+			children = (
+				5964041627F829C1004D3EA7 /* PointCloudSegmenter.entitlements */,
+				590F880927F8236C006E1098 /* PointCloudSegmenterRelease.entitlements */,
+				E73DD13C24636FF100D77039 /* Assets.xcassets */,
+				590F880827F82138006E1098 /* dgcnnmin.mlmodel */,
+				590F880227F8201F006E1098 /* room2blocks.py */,
+				590F87CF27F4401F006E1098 /* points2volume.py */,
+				0F6CDA9626CFAF5B0001D1E3 /* CpuParticle.swift */,
+				0FA9255D26B926AE00012C25 /* XError.swift */,
+				0F852DA226B80435004B4DCF /* FileWriter.swift */,
+				592424D42827CCB9004C4E5D /* FileReader.swift */,
+				E7B7223C24809D1E002E43E8 /* Helpers.swift */,
+				E73DD13724636FEF00D77039 /* ScanController.swift */,
+				0FA9256326BB5F6000012C25 /* SaveController.swift */,
+				0FFF3FED26C0A94400BBD761 /* ResultController.swift */,
+				592424D2282019E7004C4E5D /* SegmentController.swift */,
+				590F880427F82086006E1098 /* PythonController.swift */,
+				590F87C627E8495B006E1098 /* MainController.swift */,
+				590F87C827E85CB8006E1098 /* VisualizeController.swift */,
+				E73DD13024636FEF00D77039 /* AppDelegate.swift */,
+				E73DD13924636FEF00D77039 /* Main.storyboard */,
+				E73DD13E24636FF100D77039 /* LaunchScreen.storyboard */,
+				5964041E27F82C64004D3EA7 /* PointCloudSegmenter-Bridging-Header.h */,
+				E73DD14124636FF100D77039 /* Info.plist */,
+				E73DD13224636FEF00D77039 /* Shaders.metal */,
+				E73DD13424636FEF00D77039 /* ShaderTypes.h */,
+				E7B7223A24807ACA002E43E8 /* MetalBuffer.swift */,
+				E73DD13524636FEF00D77039 /* Renderer.swift */,
+			);
+			path = PointCloudSegmenter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E73DD12C24636FEF00D77039 /* PointCloudSegmenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E73DD14524636FF100D77039 /* Build configuration list for PBXNativeTarget "PointCloudSegmenter" */;
+			buildPhases = (
+				79DDF86BBBCF3B994EBD7CA9 /* [CP] Check Pods Manifest.lock */,
+				E73DD12924636FEF00D77039 /* Sources */,
+				E73DD12A24636FEF00D77039 /* Frameworks */,
+				E73DD12B24636FEF00D77039 /* Resources */,
+				19BD6C0D26C33BA4781914F7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PointCloudSegmenter;
+			packageProductDependencies = (
+				5964043527F83072004D3EA7 /* PythonKit */,
+				5964043827F83082004D3EA7 /* NumPy-iOS */,
+				5964043B27F830BA004D3EA7 /* Open3D-iOS */,
+			);
+			productName = SceneDepthDemo;
+			productReference = E73DD12D24636FEF00D77039 /* Point Cloud.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E73DD12524636FEF00D77039 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					E73DD12C24636FEF00D77039 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = E73DD12824636FEF00D77039 /* Build configuration list for PBXProject "PointCloudSegmenter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E73DD12424636FEF00D77039;
+			packageReferences = (
+				5964043427F83072004D3EA7 /* XCRemoteSwiftPackageReference "PythonKit" */,
+				5964043727F83082004D3EA7 /* XCRemoteSwiftPackageReference "NumPy-iOS" */,
+				5964043A27F830BA004D3EA7 /* XCRemoteSwiftPackageReference "Open3D-iOS" */,
+			);
+			productRefGroup = E73DD12E24636FEF00D77039 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E73DD12C24636FEF00D77039 /* PointCloudSegmenter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E73DD12B24636FEF00D77039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E73DD14024636FF100D77039 /* LaunchScreen.storyboard in Resources */,
+				E73DD13D24636FF100D77039 /* Assets.xcassets in Resources */,
+				590F87D027F4401F006E1098 /* points2volume.py in Resources */,
+				E73DD13B24636FEF00D77039 /* Main.storyboard in Resources */,
+				5964041827F82AB3004D3EA7 /* room2blocks.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19BD6C0D26C33BA4781914F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PointCloudSegmenter/Pods-PointCloudSegmenter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PointCloudSegmenter/Pods-PointCloudSegmenter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PointCloudSegmenter/Pods-PointCloudSegmenter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79DDF86BBBCF3B994EBD7CA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PointCloudSegmenter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E73DD12924636FEF00D77039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5964041A27F82AC6004D3EA7 /* PythonController.swift in Sources */,
+				0FFF3FEE26C0A94400BBD761 /* ResultController.swift in Sources */,
+				0F852DA326B80435004B4DCF /* FileWriter.swift in Sources */,
+				5964041727F82A9F004D3EA7 /* dgcnnmin.mlmodel in Sources */,
+				0F6CDA9726CFAF5B0001D1E3 /* CpuParticle.swift in Sources */,
+				0FA9255E26B926AE00012C25 /* XError.swift in Sources */,
+				E73DD13324636FEF00D77039 /* Shaders.metal in Sources */,
+				E7B7223D24809D1E002E43E8 /* Helpers.swift in Sources */,
+				590F87C927E85CB8006E1098 /* VisualizeController.swift in Sources */,
+				592424D52827CCB9004C4E5D /* FileReader.swift in Sources */,
+				592424D3282019E7004C4E5D /* SegmentController.swift in Sources */,
+				E7B7223B24807ACA002E43E8 /* MetalBuffer.swift in Sources */,
+				E73DD13624636FEF00D77039 /* Renderer.swift in Sources */,
+				590F87C727E8495B006E1098 /* MainController.swift in Sources */,
+				0FA9256426BB5F6000012C25 /* SaveController.swift in Sources */,
+				E73DD13824636FEF00D77039 /* ScanController.swift in Sources */,
+				E73DD13124636FEF00D77039 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E73DD13924636FEF00D77039 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E73DD13A24636FEF00D77039 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E73DD13E24636FF100D77039 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E73DD13F24636FF100D77039 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E73DD14324636FF100D77039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos.internal;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E73DD14424636FF100D77039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos.internal;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E73DD14624636FF100D77039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E126D2152EAEF387F418CE57 /* Pods-PointCloudSegmenter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PointCloudSegmenter/PointCloudSegmenter.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29DQYW8M2U;
+				INFOPLIST_FILE = PointCloudSegmenter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NotSafeForPlebs.PointCloudSegmenter;
+				PRODUCT_NAME = "Point Cloud";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "PointCloudSegmenter/PointCloudSegmenter-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E73DD14724636FF100D77039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1BFBEA28CF299887A91A5F9 /* Pods-PointCloudSegmenter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PointCloudSegmenter/PointCloudSegmenterRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29DQYW8M2U;
+				INFOPLIST_FILE = PointCloudSegmenter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NotSafeForPlebs.PointCloudSegmenter;
+				PRODUCT_NAME = "Point Cloud";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "PointCloudSegmenter/PointCloudSegmenter-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E73DD12824636FEF00D77039 /* Build configuration list for PBXProject "PointCloudSegmenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E73DD14324636FF100D77039 /* Debug */,
+				E73DD14424636FF100D77039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E73DD14524636FF100D77039 /* Build configuration list for PBXNativeTarget "PointCloudSegmenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E73DD14624636FF100D77039 /* Debug */,
+				E73DD14724636FF100D77039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5964043427F83072004D3EA7 /* XCRemoteSwiftPackageReference "PythonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pvieito/PythonKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5964043727F83082004D3EA7 /* XCRemoteSwiftPackageReference "NumPy-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kewlbear/NumPy-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		5964043A27F830BA004D3EA7 /* XCRemoteSwiftPackageReference "Open3D-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kewlbear/Open3D-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5964043527F83072004D3EA7 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5964043427F83072004D3EA7 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+		5964043827F83082004D3EA7 /* NumPy-iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5964043727F83082004D3EA7 /* XCRemoteSwiftPackageReference "NumPy-iOS" */;
+			productName = "NumPy-iOS";
+		};
+		5964043B27F830BA004D3EA7 /* Open3D-iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5964043A27F830BA004D3EA7 /* XCRemoteSwiftPackageReference "Open3D-iOS" */;
+			productName = "Open3D-iOS";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E73DD12524636FEF00D77039 /* Project object */;
+}
