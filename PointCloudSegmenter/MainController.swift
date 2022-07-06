@@ -129,6 +129,7 @@ class MainController : UIViewController {
             case .alreadySavingFile: title = "Save in Progress Please Wait."
             case .noScanDone: title = "No scan to Save."
             case.savingFailed: title = "Failed To Write File."
+            case .serverOffline: title = "Server is Offline"
         }
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)

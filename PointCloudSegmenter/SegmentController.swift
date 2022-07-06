@@ -196,12 +196,13 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
                 "Content-type": "multipart/form-data"
             ]
             
-            AF.upload(multipartFormData: { multipartFormData in multipartFormData.append(self.selectedCloud!, withName: "file", fileName: "test", mimeType: "text/plain")}, to: "http://localhost:8000/upload/", headers: headers).responseDecodable(of: CBLResponse.self) {
+            AF.upload(multipartFormData: { multipartFormData in multipartFormData.append(self.selectedCloud!, withName: "file", fileName: "test", mimeType: "text/plain")}, to: "http://34.82.223.138:18999/api/cbl/inference/", headers: headers) { $0.timeoutInterval = 300 }
+                .responseDecodable(of: CBLResponse.self) {
                 response in
                 
                 guard let inferenceResult = response.value?.data
                 else {
-                    self.onSaveError(error: XError.noScanDone)
+                    self.onSaveError(error: XError.serverOffline)
                     return
                 }
                 
@@ -221,7 +222,8 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
         }
         else if selectedMethod == "DGCNN" {
             let points = castToPythonArray(arr: result)
-            let rawResult = Array(predict(data: points).prefix(points.count))
+            let rawResult = predict(data: points)
+            
             result = getVolumeFromArray(data: rawResult)
         }
         else {
@@ -249,7 +251,7 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
     
     @objc func executeDelete() -> Void {
         guard selectedCloud != nil else { return }
-
+        
         try! FileManager.default.removeItem(at: selectedCloud!)
         mainController.scannedCloudURLs.remove(at: selectedCloudIdx!)
         savedClouds.remove(at: selectedCloudIdx!)
@@ -290,7 +292,7 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
                 mainController.scannedCloudURLs.append(fileURL)
                 self.lastURL = fileURL
             } catch {
-                self.savingError = XError.savingFailed
+                self.savingError = XError.noScanDone
             }
     
             DispatchQueue.main.async {

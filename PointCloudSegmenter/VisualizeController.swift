@@ -107,6 +107,7 @@ class VisualizeController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             
             node.name = String(id)
             scene.rootNode.addChildNode(node)
+            
         }
         
         sceneView.scene = scene
@@ -146,6 +147,8 @@ class VisualizeController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     @objc func toMainMenu() -> Void {
+        sceneView.session.pause()
+        
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "mainController") as! MainController
         UIApplication.shared.windows.first?.rootViewController = viewController
@@ -156,7 +159,7 @@ class VisualizeController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         volumeMode = !volumeMode
         
         if volumeMode {
-            modeButton.setBackgroundImage(.init(systemName: "archivebox.fill"), for: .normal)
+            modeButton.setBackgroundImage(.init(systemName: "rectangle.fill"), for: .normal)
             infoText.text = volumeText
             firstCoordinate = nil
             secondCoordinate = nil

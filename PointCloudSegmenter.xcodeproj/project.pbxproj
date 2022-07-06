@@ -17,12 +17,12 @@
 		590F87D027F4401F006E1098 /* points2volume.py in Resources */ = {isa = PBXBuildFile; fileRef = 590F87CF27F4401F006E1098 /* points2volume.py */; };
 		592424D3282019E7004C4E5D /* SegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592424D2282019E7004C4E5D /* SegmentController.swift */; };
 		592424D52827CCB9004C4E5D /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592424D42827CCB9004C4E5D /* FileReader.swift */; };
-		5964041727F82A9F004D3EA7 /* dgcnnmin.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 590F880827F82138006E1098 /* dgcnnmin.mlmodel */; };
 		5964041827F82AB3004D3EA7 /* room2blocks.py in Resources */ = {isa = PBXBuildFile; fileRef = 590F880227F8201F006E1098 /* room2blocks.py */; };
 		5964041A27F82AC6004D3EA7 /* PythonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590F880427F82086006E1098 /* PythonController.swift */; };
 		5964043627F83072004D3EA7 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5964043527F83072004D3EA7 /* PythonKit */; };
 		5964043927F83082004D3EA7 /* NumPy-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 5964043827F83082004D3EA7 /* NumPy-iOS */; };
 		5964043C27F830BA004D3EA7 /* Open3D-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 5964043B27F830BA004D3EA7 /* Open3D-iOS */; };
+		598FAD5028755BF40042E99C /* dgcnn_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 598FAD4F28755BF40042E99C /* dgcnn_model.mlmodel */; };
 		C11B2C8A0EC43C916ADACB16 /* Pods_PointCloudSegmenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2735194848797D2B624812AC /* Pods_PointCloudSegmenter.framework */; };
 		E73DD13124636FEF00D77039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DD13024636FEF00D77039 /* AppDelegate.swift */; };
 		E73DD13324636FEF00D77039 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = E73DD13224636FEF00D77039 /* Shaders.metal */; };
@@ -47,12 +47,12 @@
 		590F87CF27F4401F006E1098 /* points2volume.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = points2volume.py; sourceTree = "<group>"; };
 		590F880227F8201F006E1098 /* room2blocks.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = room2blocks.py; path = "Python Scripts/room2blocks.py"; sourceTree = "<group>"; };
 		590F880427F82086006E1098 /* PythonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonController.swift; sourceTree = "<group>"; };
-		590F880827F82138006E1098 /* dgcnnmin.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = dgcnnmin.mlmodel; path = Resources/Model/dgcnnmin.mlmodel; sourceTree = "<group>"; };
 		590F880927F8236C006E1098 /* PointCloudSegmenterRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PointCloudSegmenterRelease.entitlements; sourceTree = "<group>"; };
 		592424D2282019E7004C4E5D /* SegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
 		592424D42827CCB9004C4E5D /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		5964041627F829C1004D3EA7 /* PointCloudSegmenter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PointCloudSegmenter.entitlements; sourceTree = "<group>"; };
 		5964041E27F82C64004D3EA7 /* PointCloudSegmenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PointCloudSegmenter-Bridging-Header.h"; sourceTree = "<group>"; };
+		598FAD4F28755BF40042E99C /* dgcnn_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = dgcnn_model.mlmodel; sourceTree = "<group>"; };
 		948146554F46E56B015690CC /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		B57D60B9736905755DECF7CE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1BFBEA28CF299887A91A5F9 /* Pods-PointCloudSegmenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointCloudSegmenter.release.xcconfig"; path = "Target Support Files/Pods-PointCloudSegmenter/Pods-PointCloudSegmenter.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				5964041627F829C1004D3EA7 /* PointCloudSegmenter.entitlements */,
 				590F880927F8236C006E1098 /* PointCloudSegmenterRelease.entitlements */,
 				E73DD13C24636FF100D77039 /* Assets.xcassets */,
-				590F880827F82138006E1098 /* dgcnnmin.mlmodel */,
+				598FAD4F28755BF40042E99C /* dgcnn_model.mlmodel */,
 				590F880227F8201F006E1098 /* room2blocks.py */,
 				590F87CF27F4401F006E1098 /* points2volume.py */,
 				0F6CDA9626CFAF5B0001D1E3 /* CpuParticle.swift */,
@@ -303,9 +303,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5964041A27F82AC6004D3EA7 /* PythonController.swift in Sources */,
+				598FAD5028755BF40042E99C /* dgcnn_model.mlmodel in Sources */,
 				0FFF3FEE26C0A94400BBD761 /* ResultController.swift in Sources */,
 				0F852DA326B80435004B4DCF /* FileWriter.swift in Sources */,
-				5964041727F82A9F004D3EA7 /* dgcnnmin.mlmodel in Sources */,
 				0F6CDA9726CFAF5B0001D1E3 /* CpuParticle.swift in Sources */,
 				0FA9255E26B926AE00012C25 /* XError.swift in Sources */,
 				E73DD13324636FEF00D77039 /* Shaders.metal in Sources */,

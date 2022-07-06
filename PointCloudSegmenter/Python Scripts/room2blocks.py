@@ -170,6 +170,9 @@ def processFromFile(path):
     return data
 
 def processFromArray(array):
+    global globalSample
+    globalSample = []
+    
     array = np.array(array)
     data, sample = room2blocks_plus_normalized(array, 4096, 1.0, 1.0, False, None, 1)
     

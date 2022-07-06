@@ -97,7 +97,6 @@ class ResultController : UIViewController, UIPickerViewDelegate, UIPickerViewDat
         guard selectedExport != nil else { return }
 
         try! FileManager.default.removeItem(at: selectedExport!)
-        mainController.scannedCloudURLs.remove(at: selectedExportIdx!)
         exportData.remove(at: selectedExportIdx!)
         exportPicker.reloadAllComponents()
         

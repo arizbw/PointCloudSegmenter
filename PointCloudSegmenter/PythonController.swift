@@ -41,10 +41,11 @@ func processFromArray(data: PythonObject) -> PythonObject {
 func predict(data: PythonObject) -> [[Double]] {
     let config = MLModelConfiguration()
     config.computeUnits = .all
-    guard let model = try? dgcnnmin(configuration: config)
+    guard let model = try? dgcnn_model(configuration: config)
     else {
         fatalError("Unexpected Runtime Error.")
     }
+
     
     let data = Array(processFromArray(data: data))
     var res = [[Double]]()
