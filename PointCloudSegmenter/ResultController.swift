@@ -34,6 +34,12 @@ class ResultController : UIViewController, UIPickerViewDelegate, UIPickerViewDat
         exportLabel.textColor = .white
         view.addSubview(exportLabel)
         
+        let cloudText = UILabel()
+        cloudText.text = "Selected File:"
+        cloudText.translatesAutoresizingMaskIntoConstraints = false
+        cloudText.textColor = .white
+        view.addSubview(cloudText)
+        
         exportPicker.delegate = self
         exportPicker.dataSource = self
         exportPicker.translatesAutoresizingMaskIntoConstraints = false
@@ -58,8 +64,11 @@ class ResultController : UIViewController, UIPickerViewDelegate, UIPickerViewDat
             deleteButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             deleteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            cloudText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cloudText.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 220),
+            
             exportPicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            exportPicker.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
+            exportPicker.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 340),
             
             goToSaveCurrentViewButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             goToSaveCurrentViewButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)

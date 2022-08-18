@@ -24,6 +24,12 @@ class SaveController : UIViewController, UITextFieldDelegate {
         fileTypeWarning.textColor = .white
         view.addSubview(fileTypeWarning)
         
+        let saveText = UILabel()
+        saveText.text = "Saved File:"
+        saveText.translatesAutoresizingMaskIntoConstraints = false
+        saveText.textColor = .white
+        view.addSubview(saveText)
+        
         fileNameInput.delegate = self
         fileNameInput.isUserInteractionEnabled = true
         fileNameInput.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +58,7 @@ class SaveController : UIViewController, UITextFieldDelegate {
         
         NSLayoutConstraint.activate([
             fileNameInput.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            fileNameInput.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            fileNameInput.centerYAnchor.constraint(equalTo: view.topAnchor, constant:325),
             fileNameInput.widthAnchor.constraint(equalToConstant: 250),
             fileNameInput.heightAnchor.constraint(equalToConstant: 45),
             
@@ -61,6 +67,9 @@ class SaveController : UIViewController, UITextFieldDelegate {
             
             fileTypeWarning.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             fileTypeWarning.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120),
+            
+            saveText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            saveText.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 275),
             
             saveCurrentButton.widthAnchor.constraint(equalToConstant: 150),
             saveCurrentButton.heightAnchor.constraint(equalToConstant: 50),

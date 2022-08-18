@@ -21,11 +21,17 @@ class MainController : UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
+        
         self.initializeSaveFolders()
         
         PythonSupport.initialize()
         NumPySupport.sitePackagesURL.insertPythonPath()
         Open3DSupport.sitePackagesURL.insertPythonPath()
+        
+        let backgroundLayer = UIImageView()
+        backgroundLayer.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        backgroundLayer.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(backgroundLayer)
         
         let appIcon = UIImageView(image: UIImage(systemName: "camera.circle", withConfiguration: UIImage.SymbolConfiguration(scale: .large)))
         appIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -36,57 +42,72 @@ class MainController : UIViewController {
         titleText.text = "Point Cloud Segmenter"
         titleText.translatesAutoresizingMaskIntoConstraints = false
         titleText.textAlignment = NSTextAlignment.center
+        titleText.font = titleText.font.withSize(25)
         view.addSubview(titleText)
         
         let scanButton = UIButton(type: .system)
         scanButton.setTitle("Scan", for: .normal)
+        scanButton.titleLabel?.font = scanButton.titleLabel?.font.withSize(20)
         scanButton.translatesAutoresizingMaskIntoConstraints = false
         scanButton.addTarget(self, action: #selector(toScan), for: .touchUpInside)
         scanButton.tintColor = .white
-        scanButton.backgroundColor = .systemGray
+        scanButton.layer.borderWidth = 3
+        scanButton.layer.borderColor = UIColor.white.cgColor
+        scanButton.layer.cornerRadius = 2
         view.addSubview(scanButton)
         
         let segmentButton = UIButton(type: .system)
         segmentButton.setTitle("Segment", for: .normal)
+        segmentButton.titleLabel?.font = segmentButton.titleLabel?.font.withSize(20)
         segmentButton.translatesAutoresizingMaskIntoConstraints = false
         segmentButton.addTarget(self, action: #selector(showScanResults), for: .touchUpInside)
         segmentButton.tintColor = .white
-        segmentButton.backgroundColor = .systemGray
+        segmentButton.layer.borderWidth = 3
+        segmentButton.layer.borderColor = UIColor.white.cgColor
+        segmentButton.layer.cornerRadius = 2
         view.addSubview(segmentButton)
         
         let visualizeButton = UIButton(type: .system)
         visualizeButton.setTitle("Visualize", for: .normal)
+        visualizeButton.titleLabel?.font = segmentButton.titleLabel?.font.withSize(20)
         visualizeButton.translatesAutoresizingMaskIntoConstraints = false
         visualizeButton.addTarget(self, action: #selector(showSegmentResult), for: .touchUpInside)
         visualizeButton.tintColor = .white
-        visualizeButton.backgroundColor = .systemGray
+        visualizeButton.layer.borderWidth = 3
+        visualizeButton.layer.borderColor = UIColor.white.cgColor
+        visualizeButton.layer.cornerRadius = 2
         view.addSubview(visualizeButton)
         
         NSLayoutConstraint.activate([
-            appIcon.widthAnchor.constraint(equalToConstant: 100),
-            appIcon.heightAnchor.constraint(equalToConstant: 100),
-            appIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            appIcon.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -600),
+            backgroundLayer.widthAnchor.constraint(equalToConstant: 100000),
+            backgroundLayer.heightAnchor.constraint(equalToConstant: 100000),
+            backgroundLayer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            backgroundLayer.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            titleText.widthAnchor.constraint(equalToConstant: 200),
+            appIcon.widthAnchor.constraint(equalToConstant: 150),
+            appIcon.heightAnchor.constraint(equalToConstant: 150),
+            appIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            appIcon.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -550),
+            
+            titleText.widthAnchor.constraint(equalTo: view.widthAnchor),
             titleText.heightAnchor.constraint(equalToConstant: 50),
             titleText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -550),
+            titleText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -500),
             
-            scanButton.widthAnchor.constraint(equalToConstant: 150),
+            scanButton.widthAnchor.constraint(equalToConstant: 250),
             scanButton.heightAnchor.constraint(equalToConstant: 50),
             scanButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             scanButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -400),
             
-            segmentButton.widthAnchor.constraint(equalToConstant: 150),
+            segmentButton.widthAnchor.constraint(equalToConstant: 250),
             segmentButton.heightAnchor.constraint(equalToConstant: 50),
             segmentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            segmentButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300),
+            segmentButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -325),
             
-            visualizeButton.widthAnchor.constraint(equalToConstant: 150),
+            visualizeButton.widthAnchor.constraint(equalToConstant: 250),
             visualizeButton.heightAnchor.constraint(equalToConstant: 50),
             visualizeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            visualizeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200)
+            visualizeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250)
         ])
         
         self.loadSavedClouds()

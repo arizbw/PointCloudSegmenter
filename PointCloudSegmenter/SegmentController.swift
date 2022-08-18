@@ -38,6 +38,22 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
         mainController.loadSavedClouds()
         savedClouds = mainController.scannedCloudURLs
         
+        fileNameInput.delegate = self
+        fileNameInput.isUserInteractionEnabled = true
+        fileNameInput.translatesAutoresizingMaskIntoConstraints = false
+        fileNameInput.placeholder = "File Name"
+        fileNameInput.borderStyle = .roundedRect
+        fileNameInput.autocorrectionType = .no
+        fileNameInput.returnKeyType = .done
+        fileNameInput.backgroundColor = .systemBackground
+        view.addSubview(fileNameInput)
+        
+        let saveText = UILabel()
+        saveText.text = "Saved File:"
+        saveText.translatesAutoresizingMaskIntoConstraints = false
+        saveText.textColor = .white
+        view.addSubview(saveText)
+        
         cloudLabel.text = "Saved Scans: \(savedClouds.count) found"
         cloudLabel.translatesAutoresizingMaskIntoConstraints = false
         cloudLabel.textColor = .white
@@ -52,6 +68,12 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
         }
         view.addSubview(cloudPicker)
         
+        let cloudText = UILabel()
+        cloudText.text = "Target File:"
+        cloudText.translatesAutoresizingMaskIntoConstraints = false
+        cloudText.textColor = .white
+        view.addSubview(cloudText)
+        
         segmentationMethodPicker.tag = 2
         segmentationMethodPicker.delegate = self
         segmentationMethodPicker.dataSource = self
@@ -59,15 +81,11 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
         segmentationMethodPicker.delegate?.pickerView?(segmentationMethodPicker, didSelectRow: 0, inComponent: 0)
         view.addSubview(segmentationMethodPicker)
         
-        fileNameInput.delegate = self
-        fileNameInput.isUserInteractionEnabled = true
-        fileNameInput.translatesAutoresizingMaskIntoConstraints = false
-        fileNameInput.placeholder = "File Name"
-        fileNameInput.borderStyle = .roundedRect
-        fileNameInput.autocorrectionType = .no
-        fileNameInput.returnKeyType = .done
-        fileNameInput.backgroundColor = .systemBackground
-        view.addSubview(fileNameInput)
+        let methodText = UILabel()
+        methodText.text = "Segmentation Method:"
+        methodText.translatesAutoresizingMaskIntoConstraints = false
+        methodText.textColor = .white
+        view.addSubview(methodText)
         
         deleteButton.tintColor = .red
         deleteButton.setTitle("Delete Selected Scan", for: .normal)
@@ -87,18 +105,27 @@ class SegmentController : UIViewController, UITextFieldDelegate, UIPickerViewDel
             cloudLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             cloudLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            segmentationMethodPicker.heightAnchor.constraint(equalToConstant: 225),
-            segmentationMethodPicker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
-            segmentationMethodPicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            cloudPicker.heightAnchor.constraint(equalToConstant: 225),
-            cloudPicker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -375),
-            cloudPicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            saveText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            saveText.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 115),
             
             fileNameInput.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            fileNameInput.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -600),
+            fileNameInput.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 185),
             fileNameInput.widthAnchor.constraint(equalToConstant: 250),
             fileNameInput.heightAnchor.constraint(equalToConstant: 45),
+            
+            cloudText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cloudText.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 220),
+            
+            cloudPicker.heightAnchor.constraint(equalToConstant: 225),
+            cloudPicker.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 435),
+            cloudPicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            methodText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            methodText.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 435),
+            
+            segmentationMethodPicker.heightAnchor.constraint(equalToConstant: 225),
+            segmentationMethodPicker.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 650),
+            segmentationMethodPicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             deleteButton.widthAnchor.constraint(equalToConstant: 250),
             deleteButton.heightAnchor.constraint(equalToConstant: 50),
