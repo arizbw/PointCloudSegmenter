@@ -478,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NotSafeForPlebs.PointCloudSegmenter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AriWibisono.PointCloudSegmenter;
 				PRODUCT_NAME = "Point Cloud";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -504,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NotSafeForPlebs.PointCloudSegmenter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AriWibisono.PointCloudSegmenter;
 				PRODUCT_NAME = "Point Cloud";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
