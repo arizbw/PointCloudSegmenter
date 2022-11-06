@@ -340,7 +340,6 @@ extension Renderer {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainController = mainStoryboard.instantiateViewController(withIdentifier: "mainController") as! MainController
         
-        mainController.loadSavedClouds()
         savedCloudURLs = mainController.scannedCloudURLs
     }
 }

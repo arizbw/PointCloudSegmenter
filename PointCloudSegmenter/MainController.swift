@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 import Open3DSupport
 import NumPySupport
 import PythonSupport
@@ -19,8 +20,6 @@ class MainController : UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        
         
         self.initializeSaveFolders()
         
@@ -28,89 +27,20 @@ class MainController : UIViewController {
         NumPySupport.sitePackagesURL.insertPythonPath()
         Open3DSupport.sitePackagesURL.insertPythonPath()
         
-        let backgroundLayer = UIImageView()
-        backgroundLayer.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-        backgroundLayer.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(backgroundLayer)
+        self.loadSavedClouds()
         
-        let appIcon = UIImageView(image: UIImage(systemName: "camera.circle", withConfiguration: UIImage.SymbolConfiguration(scale: .large)))
-        appIcon.translatesAutoresizingMaskIntoConstraints = false
-        appIcon.tintColor = .white
-        view.addSubview(appIcon)
-        
-        let titleText = UILabel()
-        titleText.text = "Point Cloud Segmenter"
-        titleText.translatesAutoresizingMaskIntoConstraints = false
-        titleText.textAlignment = NSTextAlignment.center
-        titleText.font = titleText.font.withSize(25)
-        view.addSubview(titleText)
-        
-        let scanButton = UIButton(type: .system)
-        scanButton.setTitle("Scan", for: .normal)
-        scanButton.titleLabel?.font = scanButton.titleLabel?.font.withSize(20)
-        scanButton.translatesAutoresizingMaskIntoConstraints = false
-        scanButton.addTarget(self, action: #selector(toScan), for: .touchUpInside)
-        scanButton.tintColor = .white
-        scanButton.layer.borderWidth = 3
-        scanButton.layer.borderColor = UIColor.white.cgColor
-        scanButton.layer.cornerRadius = 2
-        view.addSubview(scanButton)
-        
-        let segmentButton = UIButton(type: .system)
-        segmentButton.setTitle("Segment", for: .normal)
-        segmentButton.titleLabel?.font = segmentButton.titleLabel?.font.withSize(20)
-        segmentButton.translatesAutoresizingMaskIntoConstraints = false
-        segmentButton.addTarget(self, action: #selector(showScanResults), for: .touchUpInside)
-        segmentButton.tintColor = .white
-        segmentButton.layer.borderWidth = 3
-        segmentButton.layer.borderColor = UIColor.white.cgColor
-        segmentButton.layer.cornerRadius = 2
-        view.addSubview(segmentButton)
-        
-        let visualizeButton = UIButton(type: .system)
-        visualizeButton.setTitle("Visualize", for: .normal)
-        visualizeButton.titleLabel?.font = segmentButton.titleLabel?.font.withSize(20)
-        visualizeButton.translatesAutoresizingMaskIntoConstraints = false
-        visualizeButton.addTarget(self, action: #selector(showSegmentResult), for: .touchUpInside)
-        visualizeButton.tintColor = .white
-        visualizeButton.layer.borderWidth = 3
-        visualizeButton.layer.borderColor = UIColor.white.cgColor
-        visualizeButton.layer.cornerRadius = 2
-        view.addSubview(visualizeButton)
+        let swiftUIViewController = UIHostingController(rootView: ContentView(scannedCloudURLs: scannedCloudURLs, segmentedCloudURLs: segmentedCloudURLs))
+        addChild(swiftUIViewController)
+        swiftUIViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(swiftUIViewController.view)
+        swiftUIViewController.didMove(toParent: self)
         
         NSLayoutConstraint.activate([
-            backgroundLayer.widthAnchor.constraint(equalToConstant: 100000),
-            backgroundLayer.heightAnchor.constraint(equalToConstant: 100000),
-            backgroundLayer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            backgroundLayer.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-            appIcon.widthAnchor.constraint(equalToConstant: 150),
-            appIcon.heightAnchor.constraint(equalToConstant: 150),
-            appIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            appIcon.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -550),
-            
-            titleText.widthAnchor.constraint(equalTo: view.widthAnchor),
-            titleText.heightAnchor.constraint(equalToConstant: 50),
-            titleText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -500),
-            
-            scanButton.widthAnchor.constraint(equalToConstant: 250),
-            scanButton.heightAnchor.constraint(equalToConstant: 50),
-            scanButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            scanButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -400),
-            
-            segmentButton.widthAnchor.constraint(equalToConstant: 250),
-            segmentButton.heightAnchor.constraint(equalToConstant: 50),
-            segmentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            segmentButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -325),
-            
-            visualizeButton.widthAnchor.constraint(equalToConstant: 250),
-            visualizeButton.heightAnchor.constraint(equalToConstant: 50),
-            visualizeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            visualizeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250)
+            swiftUIViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor),
+            swiftUIViewController.view.heightAnchor.constraint(equalTo: view.heightAnchor),
+            swiftUIViewController.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            swiftUIViewController.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
-        self.loadSavedClouds()
     }
     
     @objc func toScan() -> Void {
@@ -171,12 +101,14 @@ class MainController : UIViewController {
         let rawPath = docURL.appendingPathComponent("Raw")
         scannedCloudURLs = try! FileManager.default.contentsOfDirectory(
             at: rawPath, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+        scannedCloudURLs.append(URL(fileURLWithPath: "None"))
     }
     
     func loadSegmentedClouds(docURL: URL) {
         let segmentedPath = docURL.appendingPathComponent("Segmented")
         segmentedCloudURLs = try! FileManager.default.contentsOfDirectory(
             at: segmentedPath, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+        segmentedCloudURLs.append(URL(fileURLWithPath: "None"))
     }
     
     func initializeSaveFolders() {

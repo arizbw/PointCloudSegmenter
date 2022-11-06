@@ -12,6 +12,9 @@
 		0FA9255E26B926AE00012C25 /* XError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9255D26B926AE00012C25 /* XError.swift */; };
 		0FA9256426BB5F6000012C25 /* SaveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9256326BB5F6000012C25 /* SaveController.swift */; };
 		0FFF3FEE26C0A94400BBD761 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFF3FED26C0A94400BBD761 /* ResultController.swift */; };
+		590CE76828FBECED00172A1B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CE76728FBECED00172A1B /* SwiftUIView.swift */; };
+		590CE76A28FC162200172A1B /* SegmentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CE76928FC162200172A1B /* SegmentUIView.swift */; };
+		590CE76C28FC166400172A1B /* VisualizeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CE76B28FC166400172A1B /* VisualizeUIView.swift */; };
 		590F87C727E8495B006E1098 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590F87C627E8495B006E1098 /* MainController.swift */; };
 		590F87C927E85CB8006E1098 /* VisualizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590F87C827E85CB8006E1098 /* VisualizeController.swift */; };
 		590F87D027F4401F006E1098 /* points2volume.py in Resources */ = {isa = PBXBuildFile; fileRef = 590F87CF27F4401F006E1098 /* points2volume.py */; };
@@ -42,6 +45,9 @@
 		0FA9256326BB5F6000012C25 /* SaveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveController.swift; sourceTree = "<group>"; };
 		0FFF3FED26C0A94400BBD761 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		2735194848797D2B624812AC /* Pods_PointCloudSegmenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PointCloudSegmenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		590CE76728FBECED00172A1B /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		590CE76928FC162200172A1B /* SegmentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentUIView.swift; sourceTree = "<group>"; };
+		590CE76B28FC166400172A1B /* VisualizeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeUIView.swift; sourceTree = "<group>"; };
 		590F87C627E8495B006E1098 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		590F87C827E85CB8006E1098 /* VisualizeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeController.swift; sourceTree = "<group>"; };
 		590F87CF27F4401F006E1098 /* points2volume.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = points2volume.py; sourceTree = "<group>"; };
@@ -144,6 +150,9 @@
 		E73DD12F24636FEF00D77039 /* PointCloudSegmenter */ = {
 			isa = PBXGroup;
 			children = (
+				590CE76728FBECED00172A1B /* SwiftUIView.swift */,
+				590CE76B28FC166400172A1B /* VisualizeUIView.swift */,
+				590CE76928FC162200172A1B /* SegmentUIView.swift */,
 				5964041627F829C1004D3EA7 /* PointCloudSegmenter.entitlements */,
 				590F880927F8236C006E1098 /* PointCloudSegmenterRelease.entitlements */,
 				E73DD13C24636FF100D77039 /* Assets.xcassets */,
@@ -304,6 +313,7 @@
 			files = (
 				5964041A27F82AC6004D3EA7 /* PythonController.swift in Sources */,
 				598FAD5028755BF40042E99C /* dgcnn_model.mlmodel in Sources */,
+				590CE76828FBECED00172A1B /* SwiftUIView.swift in Sources */,
 				0FFF3FEE26C0A94400BBD761 /* ResultController.swift in Sources */,
 				0F852DA326B80435004B4DCF /* FileWriter.swift in Sources */,
 				0F6CDA9726CFAF5B0001D1E3 /* CpuParticle.swift in Sources */,
@@ -318,7 +328,9 @@
 				590F87C727E8495B006E1098 /* MainController.swift in Sources */,
 				0FA9256426BB5F6000012C25 /* SaveController.swift in Sources */,
 				E73DD13824636FEF00D77039 /* ScanController.swift in Sources */,
+				590CE76C28FC166400172A1B /* VisualizeUIView.swift in Sources */,
 				E73DD13124636FEF00D77039 /* AppDelegate.swift in Sources */,
+				590CE76A28FC162200172A1B /* SegmentUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
